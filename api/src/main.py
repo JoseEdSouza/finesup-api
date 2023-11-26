@@ -1,3 +1,7 @@
+import sys
+from pathlib import Path
+sys.path.append(Path(__file__).parent.parent.parent.parent)
+
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from api.src.routes.box_route import BoxRoute
@@ -7,10 +11,7 @@ from api.src.routes.transaction_route import RevenueRoute, ExpenseRoute
 from api.src.routes.fixed_transaction_route import FixedExpenseRoute, FixedRevenueRoute
 import uvicorn
 import asyncio
-import sys
-from pathlib import Path
 
-sys.path.append(Path(__file__).parent.parent.parent.parent)
 
 app = FastAPI()
 
